@@ -1,7 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head><title>Becki can code</title></head>
-<body>
+<head><title>Becki can code</title>
+<script src="brython/brython.js"></script>
+<script type="text/python">
+from browser import document, alert
+
+def echo(ev):
+    alert(document["zone"].value)
+
+    document['mybutton'].bind('click',echo)
+</script>
+</head>
+<body onload=brython()>
 <h1>Becki can code</h1>
+<h2 id="some element">can we make this go?</h2>
+<input id="zone"><button id="mybutton">click !</button>
 </body>
 </html>
